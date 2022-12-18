@@ -17,11 +17,15 @@ function showTime() {
     if (d==5) {d = "Cuma"};
     if (d==6) {d = "Cumartesi"};
     
+    // h = checkTime(h);
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('myClock').innerHTML =  h + ":" + m + ":" + s + "  " + d;
-    setTimeout(showTime, 1000);
+
   }
+
+    showTime();
+    setInterval(showTime,1000);
   
   function checkTime(i) {
     if (i < 10) {i = "0" + i};  // dakika ve saniye onune 10 dan kucukken "0" eklemek icin
